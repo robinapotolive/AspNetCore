@@ -1,0 +1,11 @@
+name: sampledemo
+trigger: 
+  - Main
+pool:
+  name: Default
+steps:
+  - 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '/p:DeployOnBuild=true /p:WebPublishMethod=Package   /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
